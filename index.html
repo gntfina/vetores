@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores</title>
+    <link rel="stylesheet" href="assets/estilos/style.css">
+    <script src="js/config.js" defer></script>
+    <script src="https://kit.fontawesome.com/5d8c3e1f97.js" crossorigin="anonymous"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <i class="fa-solid fa-bars" id="hamburguer"></i>
+        <i class="fa-solid fa-moon" id="modo-escuro"></i>
+    </header>
+    <main>
+
+        <div id="menu-conteiner">
+
+            <div id="logo"></div>
+
+            <h2>1. Vetores</h2>
+
+            <ol id="menu">
+                <li>
+                    <div class="topico">
+                        <a href="#prefacio">Prefácio</a>
+                        <button class="abrir-topico"><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                    <ol class="submenu">
+                        <li><a href="#introducao">Introdução</a></li>
+                        <li><a href="#pub-alvo">Público Alvo</a></li>
+                        <li><a href="#">Contextualização</a></li>
+                        <li><a href="#">Notação Fundamental</a></li>
+                        <li><a href="#">Conteúdo Adicional</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <div class="topico">
+                        <a href="#">Definições</a>
+                        <button class="abrir-topico"><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                    <ol class="submenu">
+                        <li><a href="#">Reta</a></li>
+                        <li><a href="#">Segmento de Reta</a></li>
+                        <li><a href="#">Segmento de Reta Orientado</a></li>
+                        <li><a href="#">Classe de Equivalência</a></li>
+                        <li><a href="#">Vetor</a></li>
+                    </ol>
+                </li>
+
+                <li>
+                    <div class="topico">
+                        <a href="#">Operações</a>
+                        <button class="abrir-topico"><i class="fa-solid fa-ellipsis"></i></button>
+                    </div>
+                    <ol class="submenu">
+                        <li><a href="#">Representação</a></li>
+                        <li><a href="#">Soma/Subtração</a></li>
+                        <li><a href="#">Normalização</a></li>
+                        <li><a href="#">Multiplicação por Escalar</a></li>
+                        <li><a href="#">Produto Escalar</a></li>
+                        <li><a href="#">Projeção</a></li>
+                        <li><a href="#">Reflexão no Plano</a></li>
+                        <li><a href="#">Produto Vetorial</a></li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <article>
+            <section>
+                <h1 id="prefacio">1. Prefácio</h1>
+
+                <p>Este livro foi desenvolvido de forma autônoma, sem pretensões acadêmicas ou financeiras. As principais motivações foram o aperfeiçoamento, por parte do autor, em tecnologias de front-end e back-end e por possuir múltiplas anotações e pseudo-artigos referentes a disciplinas ministradas no curso de <em>BC&T</em> na Universidade Federal do ABC. Além disso, como sempre me interessei por programação &mdash; mais especificamente por simulações de física e movimento &mdash;, concluí que realizar este pequeno projeto seria um bom reforço para todo esse escopo de conhecimento.</p>
+
+                <p>Gostaria de deixar claro que este livro <strong>não</strong> substitui &mdash; nem pretende substituir &mdash; um curso formal sobre esses assuntos. A abordagem adotada busca reduzir a complexidade dos problemas, das resoluções e das notações, apresentando-os da forma mais clara possível, além de privilegiar uma postura menos padronizada e excessivamente conceitual, e mais voltada ao aspecto pedagógico.</p>
+
+            </section>
+
+            <section>
+                <h2 id="introducao">1.1. Introdução</h2>
+                <p>Este texto tem como objetivo o estudo geométrico básico de vetores em \( \mathbb{R}^2 \) e \( \mathbb{R}^3 \) &mdash; ou seja, em duas e três dimensões &mdash; para a construção de uma boa intuição a fim de implementá-los em código utilizando Python com algumas bibliotecas nativas.</p>
+                <p>A opção de realizar o estudo de vetores a partir de uma abordagem geomética, em vez de puramente algébrica, foi feita pois acredito que a interpretação visual facilita a construção de significado. Antes de lidar com coordenadas, matrizes ou fórmulas, é fundamental compreender vetores como entidade, objetos que possuem características (direção, sentido e magnitude) e relações espaciais. Essa compreensão torna o formalismo algébrico mais natural apesar de ser puramente abstrato.</p>
+                <p>O estudo será concentrado nos espaços \( \mathbb{R}^2 \) e \( \mathbb{R}^3 \) por serem suficientes para desenvolver a intuição necessária sobre vetores e, ao mesmo tempo, abrangerem a maioria das aplicações práticas em computação gráfica, física clássica e simulações computacionais. Além disso, esses espaços permitem representações visuais diretas, o que reforça o caráter intuitivo e pedagógico da abordagem adotada.</p>
+            </section>
+
+            <section>
+                <h2 id="pub-alvo">1.2. Público Alvo</h2>
+                <p>Esse projeto não foi desenvolvido pensando em um público alvo específico, mas creio que assim como julgo ser importante para o aprimoramento de uma gama de habilidades que quero desenvolver, vejo que existem diversas características pessoais e acadêmicas que fazem com que essa leitura seja uma boa recomendação.</p>
+                <p>Como mencionado anteriormente, busco construir intuições geométricas de forma gradual e intuitiva. Apesar de sempre ter tido relativa facilidade com esses assuntos, muitos de meus colegas de classe enfrentaram grandes dificuldades devido à natureza teórica e abstrata com que esses temas costumam ser abordados, tanto dentro quanto fora do ambiente acadêmico.</p>
+                <p></p>
+            </section>
+
+
+
+
+
+            <div id="nav-conteiner">
+                <div class="ant">
+                    <a href="#" class="seta"><i class="fa-solid fa-angle-left"></i></a>
+                    <span>Anterior</span>
+                    <a href="#">oi</a>
+                </div>
+                <div class="prox">
+                    <span>Proximo</span>
+                    <a href="#">tchau</a>
+                    <a href="#" class="seta"><i class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>Criado e Desenvolvido por <a href="#">Guilherme Fina</a></footer>
+</body>
+</html>
