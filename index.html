@@ -14,9 +14,8 @@
         <i class="fa-solid fa-bars" id="hamburguer"></i>
         <i class="fa-solid fa-moon" id="modo-escuro"></i>
     </header>
-    <main>
 
-        <div id="menu-conteiner">
+    <div id="menu-conteiner">
 
             <div id="logo"></div>
 
@@ -30,18 +29,18 @@
                     </div>
                     <ol class="submenu">
                         <li><a href="#introducao">Introdução</a></li>
-                        <li><a href="#pub-alvo">Público Alvo</a></li>
-                        <li><a href="#">Contextualização</a></li>
-                        <li><a href="#">Notação Fundamental</a></li>
-                        <li><a href="#">Conteúdo Adicional</a></li>
+                        <li><a href="#pub-alvo">Público-alvo</a></li>
+                        <li><a href="#contex">Contextualização</a></li>
+                        <li><a href="#add">Conteúdo Adicional</a></li>
                     </ol>
                 </li>
                 <li>
                     <div class="topico">
-                        <a href="#">Definições</a>
+                        <a href="paginas/definicao.html">Definições</a>
                         <button class="abrir-topico"><i class="fa-solid fa-ellipsis"></i></button>
                     </div>
                     <ol class="submenu">
+                        <li><a href="#">Notações Necessárias</a></li>
                         <li><a href="#">Reta</a></li>
                         <li><a href="#">Segmento de Reta</a></li>
                         <li><a href="#">Segmento de Reta Orientado</a></li>
@@ -67,11 +66,12 @@
                     </ol>
                 </li>
             </ol>
-        </div>
+    </div>
 
+    <main>
         <article>
             <section>
-                <h1 id="prefacio">1. Prefácio</h1>
+                <h1 id="prefacio"><a href="#prefacio">1. Prefácio</a></h1>
 
                 <p>Este livro foi desenvolvido de forma autônoma, sem pretensões acadêmicas ou financeiras. As principais motivações foram o aperfeiçoamento, por parte do autor, em tecnologias de front-end e back-end e por possuir múltiplas anotações e pseudo-artigos referentes a disciplinas ministradas no curso de <em>BC&T</em> na Universidade Federal do ABC. Além disso, como sempre me interessei por programação &mdash; mais especificamente por simulações de física e movimento &mdash;, concluí que realizar este pequeno projeto seria um bom reforço para todo esse escopo de conhecimento.</p>
 
@@ -80,24 +80,47 @@
             </section>
 
             <section>
-                <h2 id="introducao">1.1. Introdução</h2>
+                <h2 id="introducao"><a href="#introducao">1.1. Introdução</a></h2>
+
                 <p>Este texto tem como objetivo o estudo geométrico básico de vetores em \( \mathbb{R}^2 \) e \( \mathbb{R}^3 \) &mdash; ou seja, em duas e três dimensões &mdash; para a construção de uma boa intuição a fim de implementá-los em código utilizando Python com algumas bibliotecas nativas.</p>
+
                 <p>A opção de realizar o estudo de vetores a partir de uma abordagem geomética, em vez de puramente algébrica, foi feita pois acredito que a interpretação visual facilita a construção de significado. Antes de lidar com coordenadas, matrizes ou fórmulas, é fundamental compreender vetores como entidade, objetos que possuem características (direção, sentido e magnitude) e relações espaciais. Essa compreensão torna o formalismo algébrico mais natural apesar de ser puramente abstrato.</p>
+
                 <p>O estudo será concentrado nos espaços \( \mathbb{R}^2 \) e \( \mathbb{R}^3 \) por serem suficientes para desenvolver a intuição necessária sobre vetores e, ao mesmo tempo, abrangerem a maioria das aplicações práticas em computação gráfica, física clássica e simulações computacionais. Além disso, esses espaços permitem representações visuais diretas, o que reforça o caráter intuitivo e pedagógico da abordagem adotada.</p>
             </section>
 
             <section>
-                <h2 id="pub-alvo">1.2. Público Alvo</h2>
-                <p>Esse projeto não foi desenvolvido pensando em um público alvo específico, mas creio que assim como julgo ser importante para o aprimoramento de uma gama de habilidades que quero desenvolver, vejo que existem diversas características pessoais e acadêmicas que fazem com que essa leitura seja uma boa recomendação.</p>
-                <p>Como mencionado anteriormente, busco construir intuições geométricas de forma gradual e intuitiva. Apesar de sempre ter tido relativa facilidade com esses assuntos, muitos de meus colegas de classe enfrentaram grandes dificuldades devido à natureza teórica e abstrata com que esses temas costumam ser abordados, tanto dentro quanto fora do ambiente acadêmico.</p>
-                <p></p>
+                <h2 id="pub-alvo"><a href="#pub-alvo">1.2. Público-alvo</a></h2>
+
+                <p>Este projeto não foi desenvolvido pensando em um público-alvo específico, ainda assim, creio que, assim como julgo ser importante para o aprimoramento de uma gama de habilidades que quero desenvolver, vejo que existem diversas características pessoais e acadêmicas que fazem com que essa leitura seja uma boa recomendação.</p>
+
+                <p>Como mencionado anteriormente, meu objetivo é construir intuições geométricas de forma gradual e intuitiva, mesclando abordagens visuais e conceituais. Apesar de sempre ter tido relativa facilidade com esses assuntos, muitos de meus colegas de classe enfrentaram grandes dificuldades devido à natureza teórica e abstrata com que esses temas costumam ser abordados, tanto dentro quanto fora do ambiente acadêmico.</p>
+
+                <p>Além da área acadêmica, este texto ajuda qualquer um que tenha interesse em animações, simulações e até mesmo criação de jogos. Vetores são utilizados amplamente nessas áreas por serem uma forma simples e poderosa para representar posições, velocidades e acelerações. Ao final do texto, serão mostradas duas implementações básicas de vetores &mdash; uma para vetores bidimensionais e outra para vetores tridimensionais &mdash; que, embora pudessem ser feitas de forma mais rápida com bibliotecas prontas, são análogas ao funcionamento delas. Dessa forma, auxilia significativamente no entendimento dessas bibliotecas e facilitará seu uso.</p>
             </section>
 
 
+            <section>
+                <h2 id="contex"><a href="#contex">1.3. Contextualização</a></h2>
 
+                <p>O estudo de vetores costuma ser um dos primeiros contatos do estudante com conceitos mais abstratos da matemática e da física. Em muitos materiais, esse conteúdo é apresentado de forma completamente formal, com definições e propriedades algébricas introduzidas logo de início, o que pode dificultar a construção de uma compreensão intuitiva do que um vetor pode representar.</p>
 
+                <p>No entanto, vetores surgem naturalmente em diversos contextos concretos, como o estudo do movimento, forças, deslocamentos e até aplicações computacionais. Nesses cenários, o significado geométrico e visual dos vetores é tão importante quanto sua formalização matemática.</p>
 
-            <div id="nav-conteiner">
+                <p>Vetores são tão úteis para descrever o universo ao nosso redor e aparecem de forma tão recorrente em diferentes áreas que eu acredito que chega a ser injusto trabalhar e estudar vetores sem exlorar essas possibilidades. Claro que a formalização matemática não é apenas uma alegoria, pelo contrário, ela é fundamental para uma compreensão mais profunda. <abbr title="Pergunte a Manoela">Outrossim</abbr>, neste texto, a formalização matemática não será descartada, mas introduzida à medida que se torna necessária para conectar esse universo à intuição geométrica.</p>
+            </section>
+
+            <section>
+                <h2 id="add"><a href="#add">1.4. Conteúdo Adicional</a></h2>
+
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus tempora, quisquam commodi sunt exercitationem harum unde dolores voluptatum, in aperiam, rem similique at hic? Doloribus quae itaque eum accusamus iste. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi expedita pariatur ad velit aliquam sit amet natus ut unde architecto consequatur quis sed fugiat nihil laboriosam porro, numquam, eos reprehenderit!</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, minima facilis? Modi laboriosam, doloremque voluptates tempore officia corporis aut hic culpa nihil repellat, aliquid eos rerum totam, pariatur dolorum sit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit molestiae voluptas tenetur quibusdam. Suscipit fugit sit hic quibusdam nam, aspernatur expedita, necessitatibus illo reiciendis dolorum, rerum iure praesentium debitis et.</p>
+
+            </section>
+        </article>
+
+        <div id="nav-conteiner">
                 <div class="ant">
                     <a href="#" class="seta"><i class="fa-solid fa-angle-left"></i></a>
                     <span>Anterior</span>
@@ -105,11 +128,11 @@
                 </div>
                 <div class="prox">
                     <span>Proximo</span>
-                    <a href="#">tchau</a>
-                    <a href="#" class="seta"><i class="fa-solid fa-angle-right"></i></a>
+                    <a href="paginas/definicao.html">2. Definições</a>
+                    <a href="paginas/definicao.html" class="seta"><i class="fa-solid fa-angle-right"></i></a>
                 </div>
-            </div>
-        </article>
+        </div>
+
     </main>
 
     <footer>Criado e Desenvolvido por <a href="#">Guilherme Fina</a></footer>
