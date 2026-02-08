@@ -186,7 +186,7 @@ article {
     padding: 15px;
 }
 
-article h1, article h2 {
+article h1, article h2, article h3 {
     font-weight: normal;
 }
 
@@ -224,6 +224,28 @@ article h2::after {
 
 article h2:hover::after {
     opacity: 1;
+}
+
+article h3 a:hover {
+    color: var(--fonte);
+    text-decoration: none;
+}
+
+article h3::after {
+    content: '  #';
+    opacity: 0;
+    transition: opacity 0.5s;
+    color: var(--destaque);
+}
+
+article h3:hover::after {
+    opacity: 1;
+}
+
+article .latex-linha {
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: -21px;
 }
 
 #nav-conteiner {
