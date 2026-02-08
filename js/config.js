@@ -1,7 +1,7 @@
 const hamburguer = document.getElementById('hamburguer')
 const menu = document.getElementById('menu-conteiner')
 const cabecalho = document.querySelector('header')
-const artigo = document.querySelector('article')
+const main = document.querySelector('main')
 const botoes_topico = document.querySelectorAll('#menu .abrir-topico')
 const botao_escuro = document.getElementById('modo-escuro')
 const rodape = document.querySelector('footer')
@@ -20,7 +20,7 @@ observador.observe(cabecalho)
 // funções para mover o menu lateralmente
 function moverMenu () {
     menu.classList.toggle('ativo')
-    artigo.classList.toggle('overlay')
+    main.classList.toggle('overlay')
     rodape.classList.toggle('overlay')
 }
 
@@ -36,7 +36,7 @@ if (hamburguer) {
     hamburguer.addEventListener('click', moverMenu)
 
     // caso o menu esteja ativo e clique fora
-    artigo.addEventListener('click', fecharMenu)
+    main.addEventListener('click', fecharMenu)
 
     rodape.addEventListener('click', fecharMenu)
 
