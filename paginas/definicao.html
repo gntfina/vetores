@@ -28,10 +28,10 @@
                         <button class="abrir-topico"><i class="fa-solid fa-ellipsis"></i></button>
                     </div>
                     <ol class="submenu">
-                        <li><a href="../index.html #introducao">Introdução</a></li>
-                        <li><a href="../index.html #pub-alvo">Público-alvo</a></li>
-                        <li><a href="../index.html #contex">Contextualização</a></li>
-                        <li><a href="../index.html #add">Conteúdo Adicional</a></li>
+                        <li><a href="../index.html#introducao">Introdução</a></li>
+                        <li><a href="../index.html#pub-alvo">Público-alvo</a></li>
+                        <li><a href="../index.html#contex">Contextualização</a></li>
+                        <li><a href="../index.html#add">Conteúdo Adicional</a></li>
                     </ol>
                 </li>
                 <li>
@@ -91,33 +91,41 @@
 
                 <p>O notação de soma é a seguinte:</p>
 
-                $$
-                \sum_{k=p}^n f
-                $$
+                <div class="latex-bloco">
+                    $$
+                    \sum_{k=p}^n f
+                    $$
+                </div>
 
                 <p>Ela diz que devemos somar a expressão \( f \), fazendo o índice \( k \) ir de \( p \) até \( n \) de \( 1 \) em \( 1 \). Sei que parece confuso, mas na verdade é bem simples. Vamos fazer um pequeno exemplo para exclarecer melhor.</p>
 
                 <p>Vamos calcular <span class="latex-linha">\( \sum_{k=2}^5 (k - 3) \)</span>. O que devemos fazer é repertir a expressão <span class="latex-linha">\( k - 3 \)</span>, substituindo \( k \) pelos valores de \( 2 \) até \( 5 \), e então somar os resultados. Assim, temos</p>
 
-                $$
-                \sum_{k=2}^5 (k - 3) = (2 - 3) + (3 - 3) + (4 - 3) + (5 - 3) = 2
-                $$
+                <div class="latex-bloco">
+                    $$
+                    \sum_{k=2}^5 (k - 3) = (2 - 3) + (3 - 3) + (4 - 3) + (5 - 3) = 2
+                    $$
+                </div>
 
                 <p>Essa notação é importante por que nos permite representar uma soma de muitos valores rápidamente e de forma concisa.</p>
 
                 <p>Também podemos usar essa notação para somar os elementos de uma "lista" de números utilizando índices da seguinte forma:</p>
 
-                $$
-                \sum_{k=1}^n p_k
-                $$
+                <div class="latex-bloco">
+                    $$
+                    \sum_{k=1}^n p_k
+                    $$
+                </div>
 
                 <p>O índice \( k \) escrito em \( p_k \) indica que estamos nos referindo do elemento na posição \( k \) da lista \( p \). Por exemplo, se você tiver uma lista de compras com \( n \) produtos e quer saber o valor total a pagar, basta somar os valores de cada item. Ou seja, se você chamar a sua lista de valores de \( p \), a notação acima resulta exatamente esse total.</p>
 
                 <p>Veja, por exemplo, como é definido a média aritimética:</p>
 
-                $$
-                \bar{v} = \frac{1}{n} \sum_{k=1}^n v_k
-                $$
+                <div class="latex-bloco">
+                    $$
+                    \bar{v} = \frac{1}{n} \sum_{k=1}^n v_k
+                    $$
+                </div>
 
                 <p>Tudo que essa expressão nos diz é simplesmente: "Some os valores do primeiro ao último e divida pela quantidade total". Literalmente a definição de média aritimética.</p>
 

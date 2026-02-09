@@ -8,7 +8,6 @@ const rodape = document.querySelector('footer')
 const body = document.querySelector('body')
 const links_menu = document.querySelectorAll('#menu a')
 
-
 // coloca o menu abaixo do header
 const observador = new ResizeObserver(() => {
     menu.style.top = `${cabecalho.offsetHeight}px`
@@ -58,6 +57,17 @@ links_menu.forEach((link) => {
     })
 })
 
+
+// verifica qual tema estava sendo usado
+const tema = localStorage.getItem('tema')
+
+// muda automáticamente para o tema que foi escolhido na outra página ou antes de recarregar
+if (tema === 'escuro') {
+    botao_escuro.classList.remove('fa-moon')
+    botao_escuro.classList.add('fa-sun')
+    body.classList.add('escuro')
+}
+
 // Modo escuro
 if (botao_escuro) {
     botao_escuro.addEventListener('click', () => {
@@ -65,6 +75,8 @@ if (botao_escuro) {
         botao_escuro.classList.toggle('fa-sun')
         body.classList.toggle('escuro')
 
-
+        // altera a memóra da página
+        const estaEscuro = body.classList.contains('escuro')
+        localStorage.setItem('tema', estaEscuro ? 'escuro' : 'claro')
     })
 }
