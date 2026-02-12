@@ -12,7 +12,7 @@ function animar_frente ({
         if (botao.classList.contains('tocando')) return
 
         let passoAtual = Number(img.dataset.passo)
-        if (img.dataset.passo > passoAtual) return
+        if (passoAtual > totalPassos) return
 
         botao.classList.add('tocando')
         let frame = 1
