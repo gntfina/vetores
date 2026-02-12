@@ -134,8 +134,11 @@
 
             <section>
                 <figure>
-                    <img src="../assets/imagens/sla/passo1/frame_01.png" alt="">
-                    <button id="ani1" data-passo="1">Play</button>
+                    <img data-passo="1" src="../assets/imagens/sla/passo1/frame_01.png" alt="">
+                    <figcaption>Passo 1</figcaption>
+                    <button id="ani1-"><i class="fa-solid fa-backward"></i></button>
+                    <button id="ani1+"><i class="fa-solid fa-forward"></i></button>
+                    
                 </figure>
             </section>
 
@@ -157,12 +160,20 @@
     
     <footer>Criado e Desenvolvido por <a href="#">Guilherme Fina</a></footer>
 
-    <script>
-        animar({
-            botaoId: "ani1",
-            totalPassos: "3",
-            totalFrames: 21
-        })
-    </script>
+        <script>
+            animar_frente({
+                idBotao: "ani1+",
+                totalPassos: 3,
+                framesPorPasso: 21,
+                duracao: 1
+            })
+
+            animar_tras({
+                idBotao: "ani1-",
+                framesPorPasso: 21,
+                duracao: 1
+            })
+        </script>
+
 </body>
 </html>
