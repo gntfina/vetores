@@ -316,3 +316,8 @@ footer {
 footer.overlay {
     filter: brightness(.5);
 }
+
+
+figure img {
+    width: 95%;
+}

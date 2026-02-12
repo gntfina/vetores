@@ -6,6 +6,7 @@
     <title>Definição</title>
     <link rel="stylesheet" href="../assets/estilos/style.css">
     <script src="../js/config.js" defer></script>
+    <script src="../js/animacao.js"></script>
     <script src="https://kit.fontawesome.com/5d8c3e1f97.js" crossorigin="anonymous"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 </head>
@@ -131,10 +132,14 @@
 
             </section>
 
+            <section>
+                <figure>
+                    <img src="../assets/imagens/sla/passo1/frame_01.png" alt="">
+                    <button id="ani1" data-passo="1">Play</button>
+                </figure>
+            </section>
+
         </article>
-
-
-        
 
         <div id="nav-conteiner">
                 <div class="ant">
@@ -151,5 +156,13 @@
     </main>
     
     <footer>Criado e Desenvolvido por <a href="#">Guilherme Fina</a></footer>
+
+    <script>
+        animar({
+            botaoId: "ani1",
+            totalPassos: "3",
+            totalFrames: 21
+        })
+    </script>
 </body>
 </html>
