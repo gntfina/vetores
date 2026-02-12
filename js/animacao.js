@@ -10,36 +10,29 @@ function animar_frente ({
 
     function tocar () {
         if (botao.classList.contains('tocando')) return
-        if (img.dataset.passo == "final") return
+
+        let passoAtual = Number(img.dataset.passo)
+        if (img.dataset.passo > passoAtual) return
 
         botao.classList.add('tocando')
-
         let frame = 1
-        let passoAtual = Number(img.dataset.passo)
 
         intervalo = setInterval(() => {
             
             let indice = frame.toString().padStart(2, '0')
-
             img.src = `../assets/imagens/sla/passo${passoAtual}/frame_${indice}.png`
-
             frame++
 
             if (frame > framesPorPasso) {
                 clearInterval(intervalo)
                 botao.classList.remove('tocando')
 
-                if (passoAtual < totalPassos) {
+                if (passoAtual <= totalPassos) {
                     img.dataset.passo++
                 }
             }
-
-            botao.parentElement.querySelector('figcaption').innerText(passoAtual)
-
         }, duracao * 1000 / framesPorPasso);
-
     }
-
     botao.addEventListener('click', tocar)
 }
 
@@ -48,26 +41,24 @@ function animar_tras ({
 }) {
 
     const botao = document.getElementById(idBotao)
-    img = botao.parentElement.querySelector('img')
+    const img = botao.parentElement.querySelector('img')
 
-    intervalo = null
+    let intervalo = null
 
     function tocar () {
 
         if (botao.classList.contains('tocando')) return
-        if (img.dataset.passo == 'inicio') return
+        if (img.dataset.passo <= '1') return
 
         botao.classList.add("tocando")
 
         let frame = 1
-        passoAtual = Number(img.dataset.passo)
+        let passoAtual = Number(img.dataset.passo)
 
         intervalo = setInterval(() => {
             
             let indice = (framesPorPasso - frame + 1).toString().padStart(2, '0')
-
-            img.src = `../assets/imagens/sla/passo${passoAtual}/frame_${indice}.png`
-
+            img.src = `../assets/imagens/sla/passo${passoAtual-1}/frame_${indice}.png`
             frame++
 
             if (frame > framesPorPasso) {
@@ -76,11 +67,8 @@ function animar_tras ({
 
                 if (passoAtual > 1) {
                     img.dataset.passo--
-                }
-            
-            botao.parentElement.querySelector('figcaption').innerText(passoAtual)
+                }            
             }
-
 
         }, duracao * 1000 / framesPorPasso);
 
