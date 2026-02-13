@@ -5,7 +5,7 @@ function animar_frente ({
 }) {
     // Pegar o botão e a imagem
     const botao = document.getElementById(idBotao)
-    const img = botao.parentElement.querySelector('img')
+    const img = botao.closest('figure').querySelector('img')
 
     // Cria a variável do intervalo
     let intervalo = null
@@ -59,7 +59,7 @@ function animar_tras ({
 }) {
 
     const botao = document.getElementById(idBotao)
-    const img = botao.parentElement.querySelector('img')
+    const img = botao.closest('figure').querySelector('img')
 
     let intervalo = null
 
@@ -83,12 +83,18 @@ function animar_tras ({
                 clearInterval(intervalo)
                 img.classList.remove("tocando")
 
+                // coloca a imagem sendo a última do paso anterior
+                // Ta bugando quando volta pro passo 1
+                // img.src = `${caminho}/passo${passoAtual - 2}/frame_${framesPorPasso}.png`
+
                 if (passoAtual > 1) {
                     img.dataset.passo--
                 }            
             }
 
         }, duracao * 1000 / framesPorPasso);
+
+        
 
     }
     

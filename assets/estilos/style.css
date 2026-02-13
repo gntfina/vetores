@@ -238,12 +238,34 @@ article .latex-linha {
 article figure {
     margin: 40px 0;
     user-select: none;
+    border: 1px solid var(--cinza);
+    border-radius: 5px;
+    box-shadow: 0px 0px 1px var(--preto);
+    background-color: white;
+}
+
+article figure .conteiner-img {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+article figure img {
+    width: 70vw;
 }
 
 article figcaption {
     text-align: center;
     font-size: .9em;
     font-style: italic;
+    color: #222;
+}
+
+article figure .conteiner-botao {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
 }
 
 #nav-conteiner {
@@ -300,9 +322,4 @@ footer {
 
 footer.overlay {
     filter: brightness(.5);
-}
-
-
-figure img {
-    width: 95%;
 }

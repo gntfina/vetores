@@ -145,18 +145,21 @@
 
 
                 <figure>
-                    <img src="../assets/imagens/Logo02.svg" alt="" id="fig-01">
-                    <figcaption>Fig. 01 &mdash; Reta arbitrária no plano \( xy \)</figcaption>
-                </figure>
-            </section>
-
-            <section>
-                <figure>
-                    <img data-passo="1" src="../assets/imagens/sla/passo1/frame_01.png" alt="">
-                    <figcaption>Passo 1</figcaption>
-                    <button id="ani1-"><i class="fa-solid fa-backward"></i></button>
-                    <button id="ani1+"><i class="fa-solid fa-forward"></i></button>
-                    
+                    <div class="conteiner-img">
+                        <img src="../assets/imagens/animacoes/inclinacao/passo1/frame_01.png" alt="" id="fig-01" data-passo="1">
+                    </div>
+                    <figcaption>
+                        Fig. 01 &mdash; <br>
+                        1. Reta arbitrária no plano \( xy \); <br>
+                        2. Reta paralela ao eixo \( x \); <br>
+                        3. Equivalência de ângulos; <br>
+                        4. Construção de um triângulo retângulo; <br>
+                        5. Medição do lados.
+                    </figcaption>
+                    <div class="conteiner-botao">
+                        <button id="ani1-"><i class="fa-solid fa-backward"></i></button>
+                        <button id="ani1+"><i class="fa-solid fa-forward"></i></button>
+                    </div>
                 </figure>
             </section>
 
@@ -180,15 +183,15 @@
 
         <script>
             animar_frente({
-                caminho: '../assets/imagens/sla',
+                caminho: '../assets/imagens/animacoes/inclinacao',
                 idBotao: "ani1+",
-                totalPassos: 3,
+                totalPassos: 4,
                 framesPorPasso: 21,
                 duracao: 1
             })
 
             animar_tras({
-                caminho: '../assets/imagens/sla',
+                caminho: '../assets/imagens/animacoes/inclinacao',
                 idBotao: "ani1-",
                 framesPorPasso: 21,
                 duracao: 1
