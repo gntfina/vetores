@@ -20,7 +20,7 @@
 
             <div id="logo"></div>
 
-            <h2>2. Definições</h2>
+            <h2 class="titulo">2. Definições</h2>
 
             <ol id="menu">
                 <li>
@@ -74,7 +74,7 @@
         <article>
 
             <section>
-                <h1 id="definicoes"><a href="#definicoes">2. Definições</a></h1>
+                <h1 id="definicoes" class="titulo"><a href="#definicoes">2. Definições</a></h1>
 
                 <p>Todos nós sabemos o quanto a palavra "definição" na matemática costuma vir logo antes de um compilado de símbolos e estruturas tão complicadas que chegam a parecem encriptadas. Entretanto, na minha opinião, o primeiro passo para começar a trabalhar com vetores é compreender sua definição geométrica.</p>
 
@@ -84,7 +84,7 @@
             </section>
 
             <section>
-                <h2 id="not-nec"><a href="#not-nec">2.1. Notações Necessárias</a></h2>
+                <h2 id="not-nec" class="titulo"><a href="#not-nec">2.1. Notações Necessárias</a></h2>
 
                 <p>Antes de mostrar esse definição geométrica, existes algumas notações matemáticas que que julgo importantes conhecer.</p>
 
@@ -133,6 +133,24 @@
             </section>
 
             <section>
+                <h2 id="reta" class="titulo"><a href="#reta">2.1. Reta</a></h2>
+
+                <p>Uma reta é definida pela coleção infita de pontos alinhados, que se estende indefinidamente em duas direções opostas. Ou seja, uma reta corresponde à intuição geométrica que temos desse objeto, com a diferença de que ela não possui início nem fim.</p>
+
+                <p>Existem duas equações comumente utilizadas para representar uma reta no plano cartesiano: a equação geral da reta &mdash; <span class="latex-linha">\( ax + by + c = 0 \)</span> &mdash; e a equação reduzida da reta &mdash; <span class="latex-linha">\( y = mx + n \)</span>. A principal diferença entre essas duas formas é que a equação reduzida não é capaz de descrever retas verticais. Por enquanto, trabalharemos com a equação reduzida, pois ela é mais simples de interpretar e demostrar geometricamente. Mais adiante, conforme novos conceitos forem introduzidos, veremos como obter e compreender a equação geral da reta.</p>
+
+                <p>Um dos axiomas da geometria plana afirma que, dados dois pontos distintos, é possível traçar uma única reta que passa por ambos. Essa é a condição mínima para a determinação de uma reta.</p>
+
+                <p>Suponha agora que temos uma reta arbitrária, como ilustrado na <a href="#fig-01">figura 1</a>, e desejamos encontrar a equação reduzida que a representa. Note que, ao traçarmos uma reta paralela ao eixo \( x \), o ângulo formado entre essa reta e a reta original é igual ao ângulo que a reta original forma com o próprio eixo \( x \). Esse fato é válido para qualquer reta paralela ao eixo \( x \) que seja traçada. A partir desse ângulo, podemos determinar o coeficiente angular da reta &mdash; também chamado de inclinação. Escolhendo dois pontos quaisquer da reta e traçando por um deles uma reta paralela ao eixo \( x \), obtemos um triângulo retângulo cujo ângulo agudo é sempre o mesmo, independentemente dos pontos escolhidos. Assim, a razão entre o cateto oposto &mdash; \( \Delta y \) &mdash; e o cateto adjacente &mdash; \( \Delta x \) &mdash; desse triângulo é constante. Essa razão é dado por <span class="latex-linha">\( \tan(\theta) = \frac{ \Delta y }{ \Delta x } \)</span> e corresponde ao coeficiente angular \( m \) da reta. Portanto, o valor de \( m \) é suficiente para caracterizar a inclinação da reta no plano.</p>
+
+
+                <figure>
+                    <img src="../assets/imagens/Logo02.svg" alt="" id="fig-01">
+                    <figcaption>Fig. 01 &mdash; Reta arbitrária no plano \( xy \)</figcaption>
+                </figure>
+            </section>
+
+            <section>
                 <figure>
                     <img data-passo="1" src="../assets/imagens/sla/passo1/frame_01.png" alt="">
                     <figcaption>Passo 1</figcaption>
@@ -162,6 +180,7 @@
 
         <script>
             animar_frente({
+                caminho: '../assets/imagens/sla',
                 idBotao: "ani1+",
                 totalPassos: 3,
                 framesPorPasso: 21,
@@ -169,6 +188,7 @@
             })
 
             animar_tras({
+                caminho: '../assets/imagens/sla',
                 idBotao: "ani1-",
                 framesPorPasso: 21,
                 duracao: 1

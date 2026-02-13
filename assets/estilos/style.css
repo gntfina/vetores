@@ -12,11 +12,13 @@
                 opacity .3s ease;
 }
 
-/*
-Lembrar de colocar a classe título em todos os hn
-para fazer todos eles terem aquelas configurações
-de link com o #
-*/
+:root {
+    --branco: white;
+    --preto: black;
+    --fonte: #222;
+    --destaque: #0071bc;
+    --cinza: #ddd;
+}
 
 :target {
     scroll-margin-top: 50px;
@@ -34,31 +36,12 @@ body {
     font-family: 'Times New Roman', Times, serif
 }
 
-
-:root {
-    --branco: white;
-    --preto: black;
-    --fonte: #222;
-    --destaque: #0071bc;
-    --cinza: #ddd;
-}
-
 body.escuro {
     --branco: black;
     --preto: white;
     --fonte: #eee;
     --destaque: #0071bc;
     --cinza: #333;
-}
-
-a {
-    color: var(--fonte);
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--destaque);
-    text-decoration: underline;
 }
 
 header {
@@ -118,6 +101,16 @@ header i:hover {
 #menu-conteiner h2 {
     font-weight: normal;
     text-align: center;
+}
+
+#menu a {
+    color: var(--fonte);
+    text-decoration: none;
+}
+
+#menu a:hover {
+    color: var(--destaque);
+    text-decoration: underline;
 }
 
 #menu, #menu .submenu {
@@ -193,60 +186,42 @@ article {
     padding: 15px;
 }
 
-article h1, article h2, article h3 {
+article a {
+    color: var(--destaque);
+    text-decoration: none;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+article .titulo {
     font-weight: normal;
 }
 
-article h1 a:hover {
+article .titulo a {
+    color: var(--preto);
+    text-decoration: none;
+}
+
+article .titulo a:hover {
     color: var(--fonte);
     text-decoration: none;
 }
 
-article h1::after {
+article .titulo::after {
     content: '  #';
     opacity: 0;
     transition: opacity 0.5s;
     color: var(--destaque);
 }
 
-article h1:hover::after {
+article .titulo:hover::after {
     opacity: 1;
 }
 
 article h2 {
     margin-top: 40px;
-}
-
-article h2 a:hover {
-    color: var(--fonte);
-    text-decoration: none;
-}
-
-article h2::after {
-    content: '  #';
-    opacity: 0;
-    transition: opacity 0.5s;
-    color: var(--destaque);
-}
-
-article h2:hover::after {
-    opacity: 1;
-}
-
-article h3 a:hover {
-    color: var(--fonte);
-    text-decoration: none;
-}
-
-article h3::after {
-    content: '  #';
-    opacity: 0;
-    transition: opacity 0.5s;
-    color: var(--destaque);
-}
-
-article h3:hover::after {
-    opacity: 1;
 }
 
 article .latex-bloco {
@@ -258,6 +233,17 @@ article .latex-linha {
     display: inline-block;
     white-space: nowrap;
     margin-left: -21px;
+}
+
+article figure {
+    margin: 40px 0;
+    user-select: none;
+}
+
+article figcaption {
+    text-align: center;
+    font-size: .9em;
+    font-style: italic;
 }
 
 #nav-conteiner {
@@ -299,7 +285,6 @@ article .latex-linha {
 #nav-conteiner .ant .seta {
     grid-area: 1 / 1 / 3 / 2;
 }
-
 
 #nav-conteiner .prox .seta {
     grid-area: 1 / 2 / 3 / 3;
