@@ -323,3 +323,13 @@ footer {
 footer.overlay {
     filter: brightness(.5);
 }
+
+footer a {
+    color: var(--fonte);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--destaque);
+    text-decoration: underline;
+}
