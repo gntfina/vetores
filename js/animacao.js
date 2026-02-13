@@ -91,13 +91,31 @@ function animar_tras ({
                     img.dataset.passo--
                 }            
             }
-
         }, duracao * 1000 / framesPorPasso);
-
-        
-
-    }
-    
+    } 
     botao.addEventListener("click", tocar)
+}
 
+function inicio ({
+    caminho, idBotao
+}) {
+    const botao = document.getElementById(idBotao)
+    const img = botao.closest("figure").querySelector("img")
+
+    botao.addEventListener('click', () => {
+        img.src = `${caminho}/passo1/frame_01.png`
+        img.dataset.passo = "1"
+    })
+}
+
+function final ({
+    caminho, idBotao, totalPassos, framesPorPasso
+}) {
+    const botao = document.getElementById(idBotao)
+    const img = botao.closest('figure').querySelector('img')
+
+    botao.addEventListener('click', () => {
+        img.src = `${caminho}/passo${totalPassos}/frame_${framesPorPasso}.png`
+        img.dataset.passo = `${totalPassos + 1}`
+    })
 }

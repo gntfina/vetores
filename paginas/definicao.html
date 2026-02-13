@@ -157,8 +157,14 @@
                         5. Medição do lados.
                     </figcaption>
                     <div class="conteiner-botao">
-                        <button id="ani1-"><i class="fa-solid fa-backward"></i></button>
-                        <button id="ani1+"><i class="fa-solid fa-forward"></i></button>
+                        <button id="ani1_inicio"><i class="fa-solid fa-backward-fast"></i></button>
+                        <button id="ani1_passo-"><i class="fa-solid fa-backward-step"></i></button>
+                        <!--
+                        <button id="ani1-"><i class="fa-solid fa-play fa-flip-horizontal"></i></button>
+                        <button id="ani1+"><i class="fa-solid fa-play"></i></button>
+                        -->
+                        <button id="ani1_passo+"><i class="fa-solid fa-forward-step"></i></button>
+                        <button id="ani1_final"><i class="fa-solid fa-forward-fast"></i></button>
                     </div>
                 </figure>
             </section>
@@ -184,7 +190,7 @@
         <script>
             animar_frente({
                 caminho: '../assets/imagens/animacoes/inclinacao',
-                idBotao: "ani1+",
+                idBotao: "ani1_passo+",
                 totalPassos: 4,
                 framesPorPasso: 21,
                 duracao: 1
@@ -192,9 +198,21 @@
 
             animar_tras({
                 caminho: '../assets/imagens/animacoes/inclinacao',
-                idBotao: "ani1-",
+                idBotao: "ani1_passo-",
                 framesPorPasso: 21,
                 duracao: 1
+            })
+
+            inicio ({
+                caminho: '../assets/imagens/animacoes/inclinacao',
+                idBotao: "ani1_inicio"
+            })
+
+            final ({
+                caminho: '../assets/imagens/animacoes/inclinacao',
+                idBotao: "ani1_final",
+                totalPassos: 4,
+                framesPorPasso: 21
             })
         </script>
 
