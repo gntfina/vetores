@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+
+article {
+    max-width: 700px;
+    margin: auto;
+}
+
+article figure {
+    width: fit-content;
+    margin: auto;
+}
+
+article figure img {
+    height: 50vh;
+    width: 50vh;
+    margin: 30px;
+}
