@@ -144,28 +144,21 @@
 
                 <p>Suponha agora que temos uma reta arbitrária, como ilustrado na <a href="#fig-01">figura 1</a>, e desejamos encontrar a equação reduzida que a representa. Note que, ao traçarmos uma reta paralela ao eixo \( x \), o ângulo formado entre essa reta e a reta original é igual ao ângulo que a reta original forma com o próprio eixo \( x \). Esse fato é válido para qualquer reta paralela ao eixo \( x \) que seja traçada. A partir desse ângulo, podemos determinar o coeficiente angular da reta &mdash; também chamado de inclinação. Escolhendo dois pontos quaisquer da reta e traçando por um deles uma reta paralela ao eixo \( x \), obtemos um triângulo retângulo cujo ângulo agudo é sempre o mesmo, independentemente dos pontos escolhidos. Assim, a razão entre o cateto oposto &mdash; \( \Delta y \) &mdash; e o cateto adjacente &mdash; \( \Delta x \) &mdash; desse triângulo é constante. Essa razão é dado por <span class="latex-linha">\( \tan(\theta) = \frac{ \Delta y }{ \Delta x } \)</span> e corresponde ao coeficiente angular \( m \) da reta. Portanto, o valor de \( m \) é suficiente para caracterizar a inclinação da reta no plano.</p>
 
-
                 <figure>
-                    <div class="conteiner-img">
-                        <img src="../assets/imagens/animacoes/inclinacao/passo1/frame_01.png" alt="" id="fig-01" data-passo="1">
-                    </div>
+                    <div id="ani1" class="conteirner-svg" data-passo="1"></div>
                     <figcaption>
-                        Fig. 01 &mdash; <br>
-                        1. Reta arbitrária no plano \( xy \); <br>
-                        2. Reta paralela ao eixo \( x \); <br>
-                        3. Equivalência de ângulos; <br>
-                        4. Construção de um triângulo retângulo; <br>
-                        5. Medição do lados.
+                        Fig. 1 &mdash; <br>
+                        1. Reta arbitrária;<br>
+                        2. Reta paralela ao eixo \( x \);<br>
+                        3. Ângulos Equivalentes;<br>
+                        4. Construção do triângulo Retângulo;<br>
+                        5. Medição dos catetos.
                     </figcaption>
-                    <div class="conteiner-botao">
-                        <button id="ani1_inicio"><i class="fa-solid fa-backward-fast"></i></button>
-                        <button id="ani1_passo-"><i class="fa-solid fa-backward-step"></i></button>
-                        <!--
-                        <button id="ani1-"><i class="fa-solid fa-play fa-flip-horizontal"></i></button>
-                        <button id="ani1+"><i class="fa-solid fa-play"></i></button>
-                        -->
-                        <button id="ani1_passo+"><i class="fa-solid fa-forward-step"></i></button>
-                        <button id="ani1_final"><i class="fa-solid fa-forward-fast"></i></button>
+                    <div class="conteriner-botoes">
+                        <button id="ani1_primeiro"><i class="fa-solid fa-backward-fast"></i></button>
+                        <button id="ani1_step-"><i class="fa-solid fa-backward-step"></i></button>
+                        <button id="ani1_step+"><i class="fa-solid fa-forward-step"></i></button>
+                        <button id="ani1_ultimo"><i class="fa-solid fa-forward-fast"></i></button>
                     </div>
                 </figure>
             </section>
@@ -188,34 +181,40 @@
     
     <footer>Criado e Desenvolvido por <a href="#">Guilherme Fina</a></footer>
 
-        <script>
-            animar_frente({
-                caminho: '../assets/imagens/animacoes/inclinacao',
-                idBotao: "ani1_passo+",
-                totalPassos: 4,
-                framesPorPasso: 21,
-                duracao: 1
-            })
+    <script>
 
-            animar_tras({
-                caminho: '../assets/imagens/animacoes/inclinacao',
-                idBotao: "ani1_passo-",
-                framesPorPasso: 21,
-                duracao: 1
-            })
+        carregarPrimeiroFrame ({
+            idCanvas: "ani1",
+            caminho: '../assets/imagens/animacoes/inclinacao'
+        })
 
-            inicio ({
-                caminho: '../assets/imagens/animacoes/inclinacao',
-                idBotao: "ani1_inicio"
-            })
+        // animações 1
+        animar_step_frente({
+            idBotao: 'ani1_step+',
+            caminho: '../assets/imagens/animacoes/inclinacao',
+            totalPassos: 4,
+            framesPorPasso: 21
+        })
 
-            final ({
-                caminho: '../assets/imagens/animacoes/inclinacao',
-                idBotao: "ani1_final",
-                totalPassos: 4,
-                framesPorPasso: 21
-            })
-        </script>
+        animar_step_tras({
+            idBotao: 'ani1_step-',
+            caminho: '../assets/imagens/animacoes/inclinacao',
+            framesPorPasso: 21
+        })
+
+        animarPrimeiroFrame ({
+            idBotao: 'ani1_primeiro',
+            caminho: '../assets/imagens/animacoes/inclinacao'
+        })
+
+        animarUltimoFrame ({
+            idBotao: 'ani1_ultimo',
+            caminho: '../assets/imagens/animacoes/inclinacao',
+            totalPassos: 4,
+            framesPorPasso: 21
+        })
+    
+    </script>
 
 </body>
 </html>

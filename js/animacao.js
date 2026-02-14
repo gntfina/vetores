@@ -1,121 +1,138 @@
+function configurarSVG(svgTexto) {
+    const larguraMatch = svgTexto.match(/width="(\d+)"/);
+    const alturaMatch = svgTexto.match(/height="(\d+)"/);
+    
+    if (larguraMatch && alturaMatch) {
+        const w = larguraMatch[1];
+        const h = alturaMatch[1];
 
+        if (!svgTexto.includes('viewBox')) {
+            svgTexto = svgTexto.replace('<svg', `<svg viewBox="0 0 ${w} ${h}"`);
+        }
+    }
+    return svgTexto
+        .replace(/width=".*?"/, 'width="100%"')
+        .replace(/height=".*?"/, 'height="100%"')
+        .replace(/stroke="rgb\(28,28,31\)"/g, 'stroke="currentColor"')
+        .replace(/stroke="rgb\(0,0,0\)"/g, 'stroke="currentColor"')
+        .replace(/fill="rgb\(0,0,0\)"/g, 'fill="currentColor"');
+}
+
+async function carregarPrimeiroFrame ({
+    idCanvas, caminho
+})
+{
+    const canvas = document.getElementById(idCanvas)
+    const arquivo = await fetch(`${caminho}/passo1/frame_01.svg`)
+    let svgTexto = await arquivo.text()
+
+    canvas.innerHTML = configurarSVG(svgTexto)
+}
 
 function animar_frente ({
-    caminho, idBotao, totalPassos, framesPorPasso, duracao = 1
-}) {
-    // Pegar o botão e a imagem
+    idBotao, caminho, totalPassos, framesPorPasso, duracao
+})
+{
+
+} 
+
+function animar_step_frente({
+    idBotao, caminho, totalPassos, framesPorPasso, duracao=1
+})
+{
     const botao = document.getElementById(idBotao)
-    const img = botao.closest('figure').querySelector('img')
+    const canvas = botao.closest('figure').querySelector('div.conteirner-svg')
 
-    // Cria a variável do intervalo
-    let intervalo = null
-
-    // Função que será chamada quando o botão for precionado
     function tocar () {
 
-        // Impede de começar uma animação antes que a anterior termine
-        if (img.classList.contains('tocando')) return
+        let frameAtual = 1
+        let passoAtual = Number(canvas.dataset.passo)
 
-        // Verifica se é uma animação válida de acordo com o passo atual
-        let passoAtual = Number(img.dataset.passo)
         if (passoAtual > totalPassos) return
+        if (canvas.classList.contains('tocando')) return
 
-        // Define o começo da animação
-        img.classList.add('tocando')
-        let frame = 1
+        canvas.classList.add('tocando')
 
-        // Loop
-        intervalo = setInterval(() => {
-            
-            // Transforma o frame em um índice válido de acordo com o nome do arquivo
-            let indice = frame.toString().padStart(2, '0')
-            // Muda a imagem
-            img.src = `${caminho}/passo${passoAtual}/frame_${indice}.png`
-            // muda o índice do frame
-            frame++
+        let intervalo = setInterval(async () => {
 
-            // Checa para ver se chegou ao último frae
-            if (frame > framesPorPasso) {
-                // Termina o loop
+            const arquivo = await fetch(`${caminho}/passo${passoAtual}/frame_${frameAtual.toString().padStart(2, '0')}.svg`)
+            let svgTexto = await arquivo.text()
+
+            canvas.innerHTML = configurarSVG(svgTexto)
+
+            frameAtual++
+
+            if (frameAtual > framesPorPasso) {
                 clearInterval(intervalo)
-
-                // Termina a animação
-                img.classList.remove('tocando')
-
-                // Verifica se podemos ir ao próximo passo ou se chegamos ao último
-                if (passoAtual <= totalPassos) {
-                    img.dataset.passo++
-                }
+                canvas.classList.remove('tocando')
+                canvas.dataset.passo = passoAtual + 1
             }
-        },
-        // duração de cada animação em segundos
-        duracao * 1000 / framesPorPasso);
+        }, duracao * 1000 / framesPorPasso)
     }
     botao.addEventListener('click', tocar)
 }
 
-function animar_tras ({
-    caminho, idBotao, framesPorPasso, duracao = 1
-}) {
-
+function animar_step_tras({
+    idBotao, caminho, framesPorPasso, duracao=1
+})
+{
     const botao = document.getElementById(idBotao)
-    const img = botao.closest('figure').querySelector('img')
+    const canvas = botao.closest('figure').querySelector('div.conteirner-svg')
 
-    let intervalo = null
+    function tocar() {
+        let frame = framesPorPasso
+        let passoAtual = Number(canvas.dataset.passo)
 
-    function tocar () {
+        if (passoAtual <= 1) return
+        if (canvas.classList.contains('tocando')) return
 
-        if (img.classList.contains('tocando')) return
-        if (img.dataset.passo <= '1') return
+        canvas.classList.add('tocando')
 
-        img.classList.add("tocando")
+        let intervalo = setInterval(async () => {
 
-        let frame = 1
-        let passoAtual = Number(img.dataset.passo)
+            const arquivo = await fetch(`${caminho}/passo${passoAtual - 1}/frame_${frame.toString().padStart(2, '0')}.svg`)
+            let svgTexto = await arquivo.text()
 
-        intervalo = setInterval(() => {
-            
-            let indice = (framesPorPasso - frame + 1).toString().padStart(2, '0')
-            img.src = `${caminho}/passo${passoAtual-1}/frame_${indice}.png`
-            frame++
+            canvas.innerHTML = configurarSVG(svgTexto)
 
-            if (frame > framesPorPasso) {
+            frame--
+
+            if (frame < 1) {
                 clearInterval(intervalo)
-                img.classList.remove("tocando")
-
-                // coloca a imagem sendo a última do paso anterior
-                // Ta bugando quando volta pro passo 1
-                // img.src = `${caminho}/passo${passoAtual - 2}/frame_${framesPorPasso}.png`
-
-                if (passoAtual > 1) {
-                    img.dataset.passo--
-                }            
+                canvas.dataset.passo = passoAtual - 1
+                canvas.classList.remove('tocando')
             }
-        }, duracao * 1000 / framesPorPasso);
-    } 
-    botao.addEventListener("click", tocar)
+        }, duracao * 1000 / framesPorPasso)
+    }
+    botao.addEventListener('click', tocar)
 }
 
-function inicio ({
-    caminho, idBotao
-}) {
+async function animarPrimeiroFrame ({
+    idBotao, caminho
+})
+{
     const botao = document.getElementById(idBotao)
-    const img = botao.closest("figure").querySelector("img")
+    const canvas = botao.closest('figure').querySelector('div.conteirner-svg')
+    const arquivo = await fetch(`${caminho}/passo1/frame_01.svg`)
+    let svgTexto = await arquivo.text()
 
     botao.addEventListener('click', () => {
-        img.src = `${caminho}/passo1/frame_01.png`
-        img.dataset.passo = "1"
-    })
+        canvas.innerHTML = configurarSVG(svgTexto)
+        canvas.dataset.passo = 1
+    })   
 }
 
-function final ({
-    caminho, idBotao, totalPassos, framesPorPasso
-}) {
+async function animarUltimoFrame ({
+    idBotao, caminho, totalPassos, framesPorPasso
+})
+{
     const botao = document.getElementById(idBotao)
-    const img = botao.closest('figure').querySelector('img')
+    const canvas = botao.closest('figure').querySelector('div.conteirner-svg')
+    const arquivo = await fetch(`${caminho}/passo${totalPassos}/frame_${framesPorPasso.toString().padStart(2, '0')}.svg`)
+    let svgTexto = await arquivo.text()
 
     botao.addEventListener('click', () => {
-        img.src = `${caminho}/passo${totalPassos}/frame_${framesPorPasso}.png`
-        img.dataset.passo = `${totalPassos + 1}`
-    })
+        canvas.innerHTML = configurarSVG(svgTexto)
+        canvas.dataset.passo = totalPassos + 1
+    })   
 }

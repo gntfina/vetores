@@ -236,32 +236,35 @@ article .latex-linha {
 }
 
 article figure {
-    margin: 40px 0;
-    user-select: none;
+    margin: 16px 0;
     border: 1px solid var(--cinza);
-    border-radius: 5px;
-    box-shadow: 0px 0px 1px var(--preto);
-    background-color: white;
+    border-radius: 8px;
 }
 
-article figure .conteiner-img {
+article figure .conteirner-svg {
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin: 20px 0;
+    overflow: hidden;
 }
 
-article figure img {
-    width: 70vw;
+article figure svg {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    padding: 30px;
+    user-select: none;
 }
 
-article figcaption {
-    text-align: center;
-    font-size: .9em;
+article figure figcaption {
+    color: var(--fonte);
     font-style: italic;
-    color: #222;
+    font-size: .9em;
+    text-indent: 0;
+    text-align: center;
 }
 
-article figure .conteiner-botao {
+article figure .conteriner-botoes{
     display: flex;
     justify-content: center;
     gap: 10px;
