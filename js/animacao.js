@@ -29,13 +29,6 @@ async function carregarPrimeiroFrame ({
     canvas.innerHTML = configurarSVG(svgTexto)
 }
 
-function animar_frente ({
-    idBotao, caminho, totalPassos, framesPorPasso, duracao
-})
-{
-
-} 
-
 function animar_step_frente({
     idBotao, caminho, totalPassos, framesPorPasso, duracao=1
 })
