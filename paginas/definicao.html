@@ -183,37 +183,14 @@
 
     <script>
 
-        carregarPrimeiroFrame ({
+        animar({
             idCanvas: "ani1",
-            caminho: '../assets/imagens/animacoes/inclinacao'
-        })
-
-        // animações 1
-        animar_step_frente({
-            idBotao: 'ani1_step+',
             caminho: '../assets/imagens/animacoes/inclinacao',
             totalPassos: 4,
-            framesPorPasso: 21
+            framesPorPasso: 21,
+            duracao: 1 
         })
 
-        animar_step_tras({
-            idBotao: 'ani1_step-',
-            caminho: '../assets/imagens/animacoes/inclinacao',
-            framesPorPasso: 21
-        })
-
-        animarPrimeiroFrame ({
-            idBotao: 'ani1_primeiro',
-            caminho: '../assets/imagens/animacoes/inclinacao'
-        })
-
-        animarUltimoFrame ({
-            idBotao: 'ani1_ultimo',
-            caminho: '../assets/imagens/animacoes/inclinacao',
-            totalPassos: 4,
-            framesPorPasso: 21
-        })
-    
     </script>
 
 </body>
