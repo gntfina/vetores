@@ -161,6 +161,22 @@
                         <button id="ani1_ultimo"><i class="fa-solid fa-forward-fast"></i></button>
                     </div>
                 </figure>
+
+                <figure>
+                    <div id="ani2" class="conteiner-svg" data-passo="1"></div>
+                    <figcaption>
+                        Fig 02 &mdash; <br>
+                        1. Reta Arbitrária em 3 dimensões <br>
+                        2. Reta projetada no plano \( yz \) <br>
+                        3. Reta projetada no plano \( xz \)
+                    </figcaption>
+                    <div class="conteriner-botoes">
+                        <button id="ani2_primeiro"><i class="fa-solid fa-backward-fast"></i></button>
+                        <button id="ani2_step-"><i class="fa-solid fa-backward-step"></i></button>
+                        <button id="ani2_step+"><i class="fa-solid fa-forward-step"></i></button>
+                        <button id="ani2_ultimo"><i class="fa-solid fa-forward-fast"></i></button>
+                    </div>
+                </figure>
             </section>
 
         </article>
@@ -189,6 +205,14 @@
             totalPassos: 4,
             framesPorPasso: 21,
             duracao: 1 
+        })
+
+        animar ({
+            idCanvas: 'ani2',
+            caminho: '../assets/imagens/animacoes/retas-3d',
+            totalPassos: 2,
+            framesPorPasso: 21,
+            duracao: 1
         })
 
     </script>
