@@ -136,16 +136,24 @@
             <section>
                 <h2 id="reta" class="titulo"><a href="#reta">2.1. Reta</a></h2>
 
-                <p>Uma reta é definida pela coleção infita de pontos alinhados, que se estende indefinidamente em duas direções opostas. Ou seja, uma reta corresponde à intuição geométrica que temos desse objeto, com a diferença de que ela não possui início nem fim.</p>
+                <p>Uma reta é definida como a coleção infinita de pontos alinhados, que se estende indefinidamente em duas direções opostas. Ou seja, uma reta corresponde à intuição geométrica que temos desse objeto, com a diferença de que ela não possui início nem fim. Veremos agora como uma reta pode ser descrita por meio de relações entre as coordenadas de seus pontos em duas e três dimensões.</p>
 
-                <p>Existem duas equações comumente utilizadas para representar uma reta no plano cartesiano: a equação geral da reta &mdash; <span class="latex-linha">\( ax + by + c = 0 \)</span> &mdash; e a equação reduzida da reta &mdash; <span class="latex-linha">\( y = mx + n \)</span>. A principal diferença entre essas duas formas é que a equação reduzida não é capaz de descrever retas verticais. Por enquanto, trabalharemos com a equação reduzida, pois ela é mais simples de interpretar e demostrar geometricamente. Mais adiante, conforme novos conceitos forem introduzidos, veremos como obter e compreender a equação geral da reta.</p>
+                <h3 id="reta_2d" class="titulo"><a href="#reta_2d">2.1.1. Retas em Duas Dimensões</a></h3>
 
-                <p>Um dos axiomas da geometria plana afirma que, dados dois pontos distintos, é possível traçar uma única reta que passa por ambos. Essa é a condição mínima para a determinação de uma reta.</p>
+                <p>Existem duas equações comumente utilizadas para representar uma reta no plano cartesiano: a equação geral da reta &mdash; <span class="latex-linha">\( ax + by + c = 0 \)</span> &mdash; e a equação reduzida da reta &mdash; <span class="latex-linha">\( y = mx + n \)</span>. A principal diferença entre essas duas formas é que a equação reduzida não é capaz de descrever retas verticais. Por enquanto, trabalharemos com a equação reduzida, pois ela é mais simples de interpretar e demonstrar geometricamente. Mais adiante, conforme novos conceitos forem introduzidos, veremos como obter e compreender a equação geral da reta.</p>
 
-                <p>Suponha agora que temos uma reta arbitrária, como ilustrado na <a href="#fig-01">figura 1</a>, e desejamos encontrar a equação reduzida que a representa. Note que, ao traçarmos uma reta paralela ao eixo \( x \), o ângulo formado entre essa reta e a reta original é igual ao ângulo que a reta original forma com o próprio eixo \( x \). Esse fato é válido para qualquer reta paralela ao eixo \( x \) que seja traçada. A partir desse ângulo, podemos determinar o coeficiente angular da reta &mdash; também chamado de inclinação. Escolhendo dois pontos quaisquer da reta e traçando por um deles uma reta paralela ao eixo \( x \), obtemos um triângulo retângulo cujo ângulo agudo é sempre o mesmo, independentemente dos pontos escolhidos. Assim, a razão entre o cateto oposto &mdash; \( \Delta y \) &mdash; e o cateto adjacente &mdash; \( \Delta x \) &mdash; desse triângulo é constante. Essa razão é dado por <span class="latex-linha">\( \tan(\theta) = \frac{ \Delta y }{ \Delta x } \)</span> e corresponde ao coeficiente angular \( m \) da reta. Portanto, o valor de \( m \) é suficiente para caracterizar a inclinação da reta no plano.</p>
+                <aside>
+                    <h3>Nota</h3>
+
+                    <p>Nas literaturas sobre esses tópicos, a equação reduzida da reta é normalmente escrita como <span class="latex-linha">\( y = mx + b \)</span>. Entretando, a decisão de chamar o termo \( b \) de \( n \), nesse caso, se deve unicamente para evitar a repetição do mesmo nome usado na equação geral da reta <span class="latex-linha">\( ax + by + c = 0 \)</span>.</p>
+
+                    <p>Existem outras formas comuns de representar esses termos, inclusive utilizando letras gregas, mas, por uma questão de consistência, optei pelo uso da letra \( n \).</p>
+                </aside>
+
+                <p>A partir de uma reta arbitrária não vertical nem horizontal \( r \), como exemplificado na <a href="#ani1">figura 1</a>, podemos usar um pouco de geometria para derivar a equação reduzida da reta. Primeiro, devemos notar que, ao traçarmos uma reta paralela ao eixo \( x \), ela cruzará \( r \) em um ponto. O ângulo formado pela reta paralela e \( r \) deve ser o mesmo ângulo formado pelo  eixo \( x \) e \( r \).</p>
 
                 <figure>
-                    <div id="ani1" class="conteirner-svg" data-passo="1"></div>
+                    <div id="ani1" class="conteiner-svg" data-passo="1"></div>
                     <figcaption>
                         Fig. 1 &mdash; <br>
                         1. Reta arbitrária;<br>
@@ -162,11 +170,37 @@
                     </div>
                 </figure>
 
+                <p>Como não importa a altura da reta paralela ao eixo \( x \) que traçarmos, podemos usar esse ângulo para definir a inclinação da reta. Se escolhermos dois pontos distintos da reta, podemos criar um triângulo retângulo de catetos \( \Delta x \) &mdash; a distância horizontal entre os pontos &mdash; e \( \Delta y \) &mdash; a distância vertical entre os pontos. Usando trigonometria, sabemos que <span class="latex-linha">\( \tan(\theta) = \frac{ \Delta y }{ \Delta x } \)</span>, onde \( \theta \) é o ângulo descrito anteriormente. Como \( theta \) é constante para uma reta dada, \( \tan(\theta) \) também deve ser constante. Assim, podemos definir o coeficiente angular \( m \) como \( m := \frac{\Delta y}{\Delta x} \).</p>
+
+                <p>Todos dois pontos que pertencem a reta devem satisfazer essa igualdade. Assim, a partir da inclinação e um ponto dado da reta <span class="latex-linha">\( (x_0, y_0) \)</span> podemos definir que <span class="latex-linha">\( \frac{y - y_0}{x - x_0} = m \)</span> para todo ponto <span class="latex-linha">\( (x, y) \)</span> que também pertence à reta. Isolando \( y \) nessa equação, temos <span class="latex-linha">\( y = mx + y_0 - mx_0 \)</span>. Note que \( y_0 - mx_0 \) é também é uma constante, portanto podemos definir o coeficiente linear \( n \) como <span class="latex-linha">\( n = y_0 - mx_0 \)</span>. Assim, temos a equação da reta reduzida: <span class="latex-linha">\( y = mx + n \)</span>.</p>
+
+                <p>Se quiséssemos descrever retas horizontais, poderíamos usar simplesmente a equação <span class="latex-linha">\( y = n \)</span>, o que é consistente com a definição da equação reduzida da reta, já que, se a reta é horizontal, o ângulo entre ela e o eixo \( x \) é igual a \( 0 \). Pela equação reduzida, teríamos <span class="latex-linha">\( y = \tan(0)x + n\)</span> e, como <span class="latex-linha">\( \tan(0) = 0 \)</span>, obtemos <span class="latex-linha">\( y = n \)</span>. Poderíamos descrever também retas verticais pela equação <span class="latex-linha">\( x = d \)</span>, entretanto, não há como estabelecer uma relação dessa equação com a equação reduzida da reta.</p>
+
+                <h3 id="reta_3d" class="titulo"><a href="#reta_3d">2.1.2. Retas em Três Dimensões</a></h3>
+
+                <p>Agora que vimos como representar uma reta em duas dimensões, vamos tentar descrevê-la em três dimensões. Apesar de parecer contraintuitivo, podemos aplicar uma lógica semelhante à utilizada no caso bidimensional. A principal ressalva está na maneira que faremos isso. Podemos "visualizar" objetos em três dimensões por meio de suas projeções em planos, e isso é extremamente poderoso, pois, dependendo do plano escolhido, podemos compreender parte da reta analisando a relação entre apenas duas coordenadas do espaço por vez.</p>
+
+                <aside>
+                    <h3>Nota</h3>
+
+                    <p>Normalmente, retas em três dimensões são definidas com dois pontos e uma variável da seguinte forma:</p>
+
+                    <div class="latex-bloco">
+                        $$
+                        r: A + t \, (B - A) 
+                        $$
+                    </div>
+
+                    <p>Apesar de ser uma forma simples e compacta de descrever uma reta, essa representação exige certo conhecimento sobre operações vetoriais e sobre pontos no espaço. Esses tópicos serão abordados mais adiante, mas, por ora, utilizaremos sistemas de equações, que, apesar de ser uma representação menos compacta, é igualmente válida e é necessário apenas conhecimentos que já discutimos.</p>
+                </aside>
+
+                <p>Note como, na <a href="#ani2">figura 2</a>, as projeções nos permitem estudar a reta como sendo "bidimensional"; uma reta no plano </p>
+
                 <figure>
                     <div id="ani2" class="conteiner-svg" data-passo="1"></div>
                     <figcaption>
                         Fig 02 &mdash; <br>
-                        1. Reta Arbitrária em 3 dimensões <br>
+                        1. Reta arbitrária em 3 dimensões <br>
                         2. Reta projetada no plano \( yz \) <br>
                         3. Reta projetada no plano \( xz \)
                     </figcaption>
