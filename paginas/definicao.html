@@ -77,59 +77,13 @@
             <section>
                 <h1 id="definicoes" class="titulo"><a href="#definicoes">2. Definições</a></h1>
 
-                <p>Todos nós sabemos o quanto a palavra "definição" na matemática costuma vir logo antes de um compilado de símbolos e estruturas tão complicadas que chegam a parecem encriptadas. Entretanto, na minha opinião, o primeiro passo para começar a trabalhar com vetores é compreender sua definição geométrica.</p>
-
-                <p>Vamos utilizar uma definição geométrica que à primeira vista é densa e difícil de entender &mdash; então, não se assuste ao lê-la. A primeira coisa que faremos é destrinchar o significado de cada parte dessa definição, analisando seus termos individualmente, e reuni-los novamente para construir uma ideia concreta do que ela realmente diz.</p>
-
-                <p>Outro ponto importante são as consequências dessa definição, pois ela já carrega ideias fundamentais sobre o comportamento e as propriedades dos vetores. Isso será muito útil quando começarmos a estudar as operações que podemos realizar com os vetores.</p>
-            </section>
-
-            <section>
-                <h2 id="not-nec" class="titulo"><a href="#not-nec">2.1. Notações Necessárias</a></h2>
-
-                <p>Antes de mostrar esse definição geométrica, existes algumas notações matemáticas que que julgo importantes conhecer.</p>
-
-                <h3 id="soma"><a href="#soma">2.1.1. Soma</a></h3>
-
-                <p>O notação de soma é a seguinte:</p>
-
-                <div class="latex-bloco">
-                    $$
-                    \sum_{k=p}^n f
-                    $$
-                </div>
-
-                <p>Ela diz que devemos somar a expressão \( f \), fazendo o índice \( k \) ir de \( p \) até \( n \) de \( 1 \) em \( 1 \). Sei que parece confuso, mas na verdade é bem simples. Vamos fazer um pequeno exemplo para exclarecer melhor.</p>
-
-                <p>Vamos calcular <span class="latex-linha">\( \sum_{k=2}^5 (k - 3) \)</span>. O que devemos fazer é repertir a expressão <span class="latex-linha">\( k - 3 \)</span>, substituindo \( k \) pelos valores de \( 2 \) até \( 5 \), e então somar os resultados. Assim, temos</p>
-
-                <div class="latex-bloco">
-                    $$
-                    \sum_{k=2}^5 (k - 3) = (2 - 3) + (3 - 3) + (4 - 3) + (5 - 3) = 2
-                    $$
-                </div>
-
-                <p>Essa notação é importante por que nos permite representar uma soma de muitos valores rápidamente e de forma concisa.</p>
-
-                <p>Também podemos usar essa notação para somar os elementos de uma "lista" de números utilizando índices da seguinte forma:</p>
-
-                <div class="latex-bloco">
-                    $$
-                    \sum_{k=1}^n p_k
-                    $$
-                </div>
-
-                <p>O índice \( k \) escrito em \( p_k \) indica que estamos nos referindo do elemento na posição \( k \) da lista \( p \). Por exemplo, se você tiver uma lista de compras com \( n \) produtos e quer saber o valor total a pagar, basta somar os valores de cada item. Ou seja, se você chamar a sua lista de valores de \( p \), a notação acima resulta exatamente esse total.</p>
-
-                <p>Veja, por exemplo, como é definido a média aritimética:</p>
-
-                <div class="latex-bloco">
-                    $$
-                    \bar{v} = \frac{1}{n} \sum_{k=1}^n v_k
-                    $$
-                </div>
-
-                <p>Tudo que essa expressão nos diz é simplesmente: "Some os valores do primeiro ao último e divida pela quantidade total". Literalmente a definição de média aritimética.</p>
+                <p>Todos nós sabemos o quanto a palavra “definição”, na matemática, costuma vir logo antes de um compilado de símbolos e estruturas tão complicadas que chegam a parecer encriptadas. Entretanto, na minha opinião, o primeiro passo para começar a trabalhar com vetores é compreender sua definição geométrica.</p>
+                
+                <p>Vamos utilizar uma definição geométrica que, à primeira vista, pode parecer densa e difícil de entender &mdash; portanto, não se assuste ao lê-la. A primeira coisa que faremos será destrinchar o significado de cada parte dessa definição, analisando seus termos individualmente e, em seguida, reuni-los novamente para construir uma ideia concreta do que ela realmente expressa.</p>
+                
+                <p>Outro ponto importante são as consequências dessa definição, pois ela já carrega ideias fundamentais sobre o comportamento e as propriedades dos vetores. Isso será extremamente útil quando começarmos a estudar as operações que podem ser realizadas com esses objetos.</p>
+                
+                <p>Definiremos vetores como a <em>classe de equivalência de segmentos de reta orientados</em>. Como prometido, estudaremos o que são retas, segmentos de reta e segmentos de reta orientados, o conceito de classe de equivalência e, por fim, o que a junção desses conceitos implica, do ponto de vista geométrico, para a compreensão de algumas operações básicas com vetores.</p>
 
             </section>
 
@@ -170,15 +124,15 @@
                     </div>
                 </figure>
 
-                <p>Como não importa a altura da reta paralela ao eixo \( x \) que traçarmos, podemos usar esse ângulo para definir a inclinação da reta. Se escolhermos dois pontos distintos da reta, podemos criar um triângulo retângulo de catetos \( \Delta x \) &mdash; a distância horizontal entre os pontos &mdash; e \( \Delta y \) &mdash; a distância vertical entre os pontos. Usando trigonometria, sabemos que <span class="latex-linha">\( \tan(\theta) = \frac{ \Delta y }{ \Delta x } \)</span>, onde \( \theta \) é o ângulo descrito anteriormente. Como \( theta \) é constante para uma reta dada, \( \tan(\theta) \) também deve ser constante. Assim, podemos definir o coeficiente angular \( m \) como \( m := \frac{\Delta y}{\Delta x} \).</p>
+                <p>Como não importa a altura da reta paralela ao eixo \( x \) que traçarmos, podemos usar esse ângulo para definir a inclinação da reta. Se escolhermos dois pontos distintos da reta, podemos construir um triângulo retângulo cujos catetos são \( \Delta x \) &mdash; a distância horizontal entre os pontos &mdash; e \( \Delta y \) &mdash; a distância vertical entre os pontos. Usando trigonometria, sabemos que <span class="latex-linha">\( \tan(\theta) = \frac{ \Delta y }{ \Delta x } \)</span>, onde \( \theta \) é o ângulo descrito anteriormente. Como \( \theta \) é constante para uma reta dada, \( \tan(\theta) \) também deve ser constante. Assim, podemos definir o coeficiente angular \( m \) como <span class="latex-linha">\( m = \frac{\Delta y}{\Delta x} \)</span>.</p>
 
-                <p>Todos dois pontos que pertencem a reta devem satisfazer essa igualdade. Assim, a partir da inclinação e um ponto dado da reta <span class="latex-linha">\( (x_0, y_0) \)</span> podemos definir que <span class="latex-linha">\( \frac{y - y_0}{x - x_0} = m \)</span> para todo ponto <span class="latex-linha">\( (x, y) \)</span> que também pertence à reta. Isolando \( y \) nessa equação, temos <span class="latex-linha">\( y = mx + y_0 - mx_0 \)</span>. Note que \( y_0 - mx_0 \) é também é uma constante, portanto podemos definir o coeficiente linear \( n \) como <span class="latex-linha">\( n = y_0 - mx_0 \)</span>. Assim, temos a equação da reta reduzida: <span class="latex-linha">\( y = mx + n \)</span>.</p>
+                <p>Todos dois pontos que pertencem a reta devem satisfazer essa igualdade. Assim, a partir da inclinação e um ponto dado da reta <span class="latex-linha">\( (x_0, y_0) \)</span>, podemos definir que <span class="latex-linha">\( m = \frac{y - y_0}{x - x_0} \)</span> para todo ponto <span class="latex-linha">\( (x, y) \)</span> que também pertence à reta. Isolando \( y \) nessa equação, temos <span class="latex-linha">\( y = mx + y_0 - mx_0 \)</span>. Note que \( y_0 - mx_0 \) também é uma constante, portanto podemos definir o coeficiente linear \( n \) como <span class="latex-linha">\( n = y_0 - mx_0 \)</span>. Assim, temos a equação da reta reduzida: <span class="latex-linha">\( y = mx + n \)</span>.</p>
 
                 <p>Se quiséssemos descrever retas horizontais, poderíamos usar simplesmente a equação <span class="latex-linha">\( y = n \)</span>, o que é consistente com a definição da equação reduzida da reta, já que, se a reta é horizontal, o ângulo entre ela e o eixo \( x \) é igual a \( 0 \). Pela equação reduzida, teríamos <span class="latex-linha">\( y = \tan(0)x + n\)</span> e, como <span class="latex-linha">\( \tan(0) = 0 \)</span>, obtemos <span class="latex-linha">\( y = n \)</span>. Poderíamos descrever também retas verticais pela equação <span class="latex-linha">\( x = d \)</span>, entretanto, não há como estabelecer uma relação dessa equação com a equação reduzida da reta.</p>
 
                 <h3 id="reta_3d" class="titulo"><a href="#reta_3d">2.1.2. Retas em Três Dimensões</a></h3>
 
-                <p>Agora que vimos como representar uma reta em duas dimensões, vamos tentar descrevê-la em três dimensões. Apesar de parecer contraintuitivo, podemos aplicar uma lógica semelhante à utilizada no caso bidimensional. A principal ressalva está na maneira que faremos isso. Podemos "visualizar" objetos em três dimensões por meio de suas projeções em planos, e isso é extremamente poderoso, pois, dependendo do plano escolhido, podemos compreender parte da reta analisando a relação entre apenas duas coordenadas do espaço por vez.</p>
+                <p>Agora que vimos como representar uma reta em duas dimensões, vamos tentar descrevê-la em três dimensões. Apesar de parecer contraintuitivo, podemos aplicar uma lógica semelhante à utilizada no caso bidimensional. A principal ressalva está na maneira como faremos isso. Podemos "visualizar" objetos em três dimensões por meio de suas projeções em planos, e isso é extremamente poderoso, pois, dependendo do plano escolhido, podemos compreender parte da reta analisando a relação entre apenas duas coordenadas do espaço por vez.</p>
 
                 <aside>
                     <h3>Nota</h3>
@@ -191,10 +145,21 @@
                         $$
                     </div>
 
-                    <p>Apesar de ser uma forma simples e compacta de descrever uma reta, essa representação exige certo conhecimento sobre operações vetoriais e sobre pontos no espaço. Esses tópicos serão abordados mais adiante, mas, por ora, utilizaremos sistemas de equações, que, apesar de ser uma representação menos compacta, é igualmente válida e é necessário apenas conhecimentos que já discutimos.</p>
+                    <p>Apesar de ser uma forma simples e compacta de descrever uma reta, essa representação exige certo conhecimento sobre operações vetoriais e sobre pontos no espaço. Esses tópicos serão abordados mais adiante, mas, por ora, utilizaremos sistemas de equações, que, apesar de ser uma representação menos compacta, são igualmente válidos e necessitam apenas conhecimentos que já discutimos.</p>
                 </aside>
 
-                <p>Note como, na <a href="#ani2">figura 2</a>, as projeções nos permitem estudar a reta como sendo "bidimensional"; uma reta no plano </p>
+                <p>Note como, na <a href="#ani2">figura 2</a>, as projeções nos permitem estudar a reta como sendo "bidimensional"; uma reta no plano \( yz \) e outra reta no plano \( xz \). A partir de cada uma dessas projeções, podemos descrever, da mesma forma como fizemos no caso bidimensional, a relação entre as variáveis \( y \) e \( z \), e a relação entre as variáveis \( x \) e \( z \). Assim chegaríamos a duas equações que descrevem a reta da seguinte forma:</p>
+
+                <div class="latex-bloco">
+                    $$
+                    \begin{cases}
+                    z = m_1 x + n_1 \\
+                    z = m_2 y + n_2
+                    \end{cases}
+                    $$
+                </div>
+
+                <p>Todos os pontos <span class="latex-linha">\( (x, y, z) \)</span> do espaço que satisfazem ambas as equações pertencem à reta.</p>
 
                 <figure>
                     <div id="ani2" class="conteiner-svg" data-passo="1"></div>
@@ -211,6 +176,10 @@
                         <button id="ani2_ultimo"><i class="fa-solid fa-forward-fast"></i></button>
                     </div>
                 </figure>
+
+                <p>Note que \( m_1 \) e \( m_2 \), neste caso, também têm um significado semelhante ao do coeficiente angular \( m \) no caso bidimensional. Entretanto, em vez de representarem uma inclinação, podemos compreendê-los como direções. Mais precisamente, esses coeficientes indicam como a coordenada \( z \) varia em função das coordenadas \( x \) e \( y \), respectivamente. Assim, eles descrevem de que maneira a reta “avança” no espaço ao longo de cada uma dessas direções, capturando parte do seu comportamento tridimensional por meio de relações bidimensionais.</p>
+
+
             </section>
 
         </article>

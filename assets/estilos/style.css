@@ -235,10 +235,11 @@ article .latex-bloco {
 article .latex-linha {
     display: inline-block;
     white-space: nowrap;
-    margin-left: -21px;
+    margin-left: -17px;
 }
 
 article aside {
+    margin: 20px 0;
     border: 1px solid var(--cinza);
     border-left: 5px solid var(--destaque);
     border-radius: 4px;
