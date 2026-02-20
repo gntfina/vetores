@@ -30,7 +30,7 @@ def projecaoDoPontoNoPlano(posCamera: Vetor, dirCamera: Vetor, upCamera: Vetor, 
     return (round(x, 2), round(y, 2))
 
 
-def magica(posCameras: Vetor, dirCameras: Vetor, upCameras: Vetor, pontos: Vetor) -> None:
+def textoGGB(posCameras: Vetor, dirCameras: Vetor, upCameras: Vetor, pontos: Vetor) -> None:
 
     print('\n')
     # Cria a lista de pontos
@@ -94,4 +94,4 @@ pontos = [
     Vetor(3, -3, 0)
 ]
 
-magica(posCameras, dirCameras, upCameras, pontos)
+textoGGB(posCameras, dirCameras, upCameras, pontos)
