@@ -21,4 +21,4 @@ def organizar_pastas(caminho: str) -> None:
 
         os.rename(caminho_antigo, caminho_novo)
 
-organizar_pastas('C:/Users/guilh/OneDrive/Documentos/Sites/vetores/assets/imagens/animacoes/retas-3d')
+#organizar_pastas('caminho')
