@@ -27,7 +27,13 @@ def projecaoDoPontoNoPlano(posCamera: Vetor, dirCamera: Vetor, upCamera: Vetor, 
     x = Vetor.produtoEscalar(vetorRelativo, eixoX)
     y = Vetor.produtoEscalar(vetorRelativo, eixoY)
 
-    return (round(x, 2), round(y, 2))
+    if abs(x) < 1e-6:
+        x = 0
+
+    if abs(y) < 1e-6:
+        y = 0
+
+    return (x, y)
 
 
 def textoGGB(posCameras: Vetor, dirCameras: Vetor, upCameras: Vetor, pontos: Vetor) -> None:
@@ -50,7 +56,8 @@ def textoGGB(posCameras: Vetor, dirCameras: Vetor, upCameras: Vetor, pontos: Vet
     qtd = len(posCameras)
     texto = f'l1({qtd} k - {qtd - 1})'
     for k in range(qtd - 1):
-        texto = f'(1 - {letras[k]}) (' + texto + f') + {letras[k]} l1({qtd} k - {1-k})'
+        print(f'{letras[k]} = Slider(0, 1.05, 0.05)\n')
+        texto = f'(1 - {letras[k]}) (' + texto + f') + {letras[k]} l1({qtd} k - {qtd - k - 2})'
     texto = 'Sequence(' + texto + f', k, 1, {len(pontos)})'
     print(texto)
 
@@ -70,10 +77,11 @@ def textoGGB(posCameras: Vetor, dirCameras: Vetor, upCameras: Vetor, pontos: Vet
 
     print('\n')
     # Cria um lista com os pontos restantes
-    print('pontos = Take(l2, 7, length(l2))\n')
+    
+    print(f'pontos = Take(l2, 7, {len(pontos)})\n')
 
 
-distCamera = 5
+distCamera = 10
 posCameras = [
     distCamera * Vetor(.6, -.8, .5).normalizar(), 
     distCamera * Vetor.i(),
@@ -88,10 +96,9 @@ pontos = [
     - 2 * Vetor.j(),
     4 * Vetor.k(),
     - Vetor.k(),
-    Vetor(-1, 1, 2),
-    Vetor(3, -3, 1),
-    Vetor(-1, 1, 0),
-    Vetor(3, -3, 0)
+    Vetor(0, -5, 2),
+    - Vetor(5, 0, 2) / 4,
+    Vetor(-1, -1, 0)
 ]
 
 textoGGB(posCameras, dirCameras, upCameras, pontos)

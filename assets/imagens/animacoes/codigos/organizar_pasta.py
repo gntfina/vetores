@@ -1,7 +1,8 @@
 import os
-import shutil
 
-def organizar_pastas(caminho: str) -> None:
+def organizar_pastas(pasta: str) -> None:
+
+    caminho = 'C:/Users/guilh/OneDrive/Documentos/Sites/vetores/assets/imagens/animacoes/' + pasta
     
     # Lista os arquivos da pasta
     arquivos = os.listdir(caminho)
@@ -21,4 +22,5 @@ def organizar_pastas(caminho: str) -> None:
 
         os.rename(caminho_antigo, caminho_novo)
 
-#organizar_pastas('caminho')
+
+#organizar_pastas('nome da pasta')
