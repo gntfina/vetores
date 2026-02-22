@@ -15,6 +15,7 @@ function configurarSVG(svgTexto) {
         .replace(/height=".*?"/, 'height="100%"')
         .replace(/stroke="rgb\(28,28,31\)"/g, 'stroke="currentColor"')
         .replace(/stroke="rgb\(0,0,0\)"/g, 'stroke="currentColor"')
+        .replace(/fill="rgb\(28,28,31\)"/g, 'fill="currentColor"')
         .replace(/fill="rgb\(0,0,0\)"/g, 'fill="currentColor"');
 }
 
